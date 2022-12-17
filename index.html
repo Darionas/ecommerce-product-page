@@ -1,44 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | E-commerce product page</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <meta charset="UTF-8" />
+  <title>Frontend Mentor | Ecommerce product page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="keywords" content="Ecommerce product page solution" />
+  <meta name="description" content="Ecommerce product page challenge on Frontend Mentor" />
+  <meta name="author" content="Darius" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+  <!--<link rel="stylesheet" href="main.css" />-->
+  <!--<script defer src="main.js"></script>-->
 </head>
 <body>
-
-  Collections
-  Men
-  Women
-  About
-  Contact
-
-  Sneaker Company
-
-  Fall Limited Edition Sneakers
-
-  These low-profile sneakers are your perfect casual wear companion. Featuring a 
-  durable rubber outer sole, they’ll withstand everything the weather can offer.
-
-  $125.00
-  50%
-  $250.00
-
-  0
-  Add to cart
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    <div class="grid_container">
+        <!--1st component-->
+        <header class="header_container">
+            <nav class="header_nav">
+                <div class="hamburger_container">
+                    <img class="hamburger_icon" src="images/icon-menu.svg" alt="Hamburger icon" />
+                    <img class="close_icon" src="images/icon-close.svg" alt="Close icon" />
+                </div>
+                <div class="header_navLinks">
+                    <a class="header_navLinks_collections" href="#collections">Collections</a>
+                    <a class="header_navLinks_men" href="#men">Men</a>
+                    <a class="header_navLinks_women" href="#women">Women</a>
+                    <a class="header_navLinks_about" href="#about">About</a>
+                    <a class="header_navLinks_contact" href="#contact">Contact</a>
+                </div>
+            </nav>
+            <a class="header_logo_container" href="#home"><img class="logo_icon" src="images/logo.svg" alt="Logo icon" /></a>  
+            <div class="purchase">
+                <div class="cart_container">
+                    <div class="product_order"></div>
+                    <img class="cart_icon_1" src="images/icon-cart.svg" alt="Cart icon" />
+                </div>
+                <img class="cart_container_logo" src="images/image-avatar.png" alt="Image avatar" />
+            </div>    
+        </header>
+        <!--2nd component-->
+        <div class="imgo_gallery">
+            <!--Full width images-->
+            <div class="fullSize_image_1">
+                <img class="img_product_1" src="images/image-product-1.jpg" alt="Product image 1" />
+            </div>
+            <div class="fullSize_image_2">
+                <img class="img_product_2" src="images/image-product-2.jpg" alt="Product image 2" />
+            </div>
+            <div class="fullSize_image_3">
+                <img class="img_product_3" src="images/image-product-3.jpg" alt="Product image 3" />
+            </div>
+            <div class="fullSize_image_4">
+                <img class="img_product_4" src="images/image-product-4.jpg" alt="Product image 4" />
+            </div>
+            <!--Next and previous buttons-->
+            <a class="prev" onclick="plusSlides(-1)"><img class="arrow_prev" src="images/icon-previous.svg" alt="Previous icon" /></a>
+            <a class="next" onclick="plusSlides(1)"><img class="arrow_next" src="images/icon-next.svg" alt="Next icon" /></a>
+            <!--Thumbnail images-->
+            <div class="thumbnail_images_container">
+                <div class="thumbnail_image_1">
+                    <img class="img_product_1_thumbnail" src="images/image-product-1-thumbnail.jpg" alt="Product image 1" onclick="currentSlide(1)"/>
+                </div>
+                <div class="thumbnail_image_2">
+                    <img class="img_product_2_thumbnail" src="images/image-product-2-thumbnail.jpg" alt="Product image 2" onclick="currentSlide(2)"/>
+                </div>
+                <div class="thumbnail_image_3">
+                    <img class="img_product_3_thumbnail" src="images/image-product-3-thumbnail.jpg" alt="Product image 3" onclick="currentSlide(3)"/>
+                </div>
+                <div class="thumbnail_image_4">
+                    <img class="img_product_4_thumbnail" src="images/image-product-4-thumbnail.jpg" alt="Product image 4" onclick="currentSlide(4)"/>
+                </div>
+            </div>
+        </div>
+        <!--3rd component-->
+        <main class="main_container">
+            <h2 class="company_name">SNEAKER COMPANY</h2>
+            <h1 class="product_name_title">Fall Limited Edition Sneakers</h1>
+            <div class="product_description">These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole,
+                they'll withstand everything the weather can offer.
+            </div>
+            <div class="current_price"><span class="dollar_icon_1">$</span>125.00</div>
+            <div class="discount">50<span class="percentage_icon">%</span></div>
+            <del class="old_price"><span class="dollar_icon_2">$</span>250.00</del>
+            <div class="quantity_container">
+                <div class="less_products"><img class="minus_icon" src="images/icon-minus.svg" alt="Minus icon" /></div>
+                <div class="product_quantity">0</div>
+                <div class="more_products"><img class="plus_icon" src="images/icon-plus.svg" alt="Plus icon" /></div>
+            </div>
+            <div class="order_container">
+                <img class="cart_icon_2" src="images/icon-cart.svg" alt="Cart icon" />
+                <div class="order">Add to cart</div>
+            </div>
+        </main>
+       <!--4th component-->
+        <footer class="attribution">
+            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+            Coded by <a href="#">@Darionas</a>.
+        </footer>
+    </div>
 </body>
 </html>
