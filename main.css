@@ -133,6 +133,7 @@ body {
 }
 
 .product_order {
+    display: none;
     text-align: center;
     width: 50%;
     position: absolute;
@@ -171,7 +172,7 @@ body {
 .header_navLinks {
     background-color: var(--clr-white);
     width: 65%;
-    height: 100%;
+    min-height: 100%;
     padding: 3.3rem 0 0 3.3rem;
     margin: 0 0 20rem 0;
 }
@@ -188,6 +189,90 @@ body {
     padding: 0 0 2.5rem 0;
 }
 
+.header_modal_cart {
+    display: none;
+    position: absolute;
+    top: 21vw;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: var(--clr-white);
+    margin: 0 1.5rem 0 1.5rem;
+    border-radius: 0.7rem;
+}
+
+.modal_cart_container {
+    font-weight: var(--fw-700);
+    padding: 2rem;
+}
+
+
+.modal_cart_box {
+    padding: 2rem;
+}
+
+.img_product_1_cart {
+    width: 15%;
+    border-radius: 0.7rem;
+    /*margin: 0 2rem 0 0;*/
+    /*border: 2px solid green;*/
+}
+
+.cart_container_text {
+    padding: 0 0 0 1rem;
+    font-size: 3vw;
+    /*border: 2px solid green;*/
+}
+
+.img_product_1_cart, .cart_container_text {
+    float: left;
+    /*border: 2px solid green;*/
+}
+
+.bin {
+    float: right;
+    margin: 0 0 0 1rem;
+    /*border: 2px solid green;*/
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+.cart_title {
+    color: var(--clr-dark-grayish-blue);
+    font-weight: var(--fw-700);
+}
+
+.dollar_icon_3, .one_piece_price, .multip, .operand {
+    color: var(--clr-dark-grayish-blue);
+    font-weight: var(--fw-700);
+}
+
+.dollar_icon_4, .total {
+    font-weight: 900;
+}
+
+.checkout {
+    font-size: 4vw;
+    text-align: center;
+    padding: 1.2rem;
+    margin: 0 2rem 3rem 2rem;
+    border-radius: 0.7rem;
+    background-color: var(--clr-orange);
+    color: var(--clr-pale-orange);
+    font-weight: var(--fw-700);
+    /*border: 2px solid green;*/  
+}
+
+.empty_cart {
+    color: var(--clr-dark-grayish-blue);
+    font-weight: var(--fw-700);
+    font-size: 1.4rem;
+}
+  
 /* style 2nd component - mobile */
 .imgo_gallery {
     display: grid;
@@ -559,3 +644,4 @@ body {
 .attribution {
     grid-area: attribution;
 }
+
