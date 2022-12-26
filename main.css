@@ -208,6 +208,7 @@ body {
 
 
 .modal_cart_box {
+    display: none;
     padding: 2rem;
 }
 
@@ -220,7 +221,7 @@ body {
 
 .cart_container_text {
     padding: 0 0 0 1rem;
-    font-size: 3vw;
+    font-size: 3.5vw;
     /*border: 2px solid green;*/
 }
 
@@ -256,6 +257,7 @@ body {
 }
 
 .checkout {
+    display: none;
     font-size: 4vw;
     text-align: center;
     padding: 1.2rem;
@@ -268,10 +270,23 @@ body {
 }
 
 .empty_cart {
+    display: none;
     color: var(--clr-dark-grayish-blue);
     font-weight: var(--fw-700);
     font-size: 1.4rem;
+    text-align: center;
+    padding: 7rem 0 7rem 0;
 }
+
+.follow {
+    display: none;
+    color: var(--clr-dark-grayish-blue);
+    font-weight: var(--fw-700);
+    font-size: 1.4rem;
+    text-align: center;
+    padding: 7rem 0 7rem 0;
+}
+
   
 /* style 2nd component - mobile */
 .imgo_gallery {
