@@ -84,8 +84,6 @@ function subtraction() {
     }
 }
 
-
-
 /* Add to cart */
 if(cart_icon_2) {
     cart_icon_2.addEventListener('click', function() {
@@ -151,7 +149,7 @@ bin.addEventListener('click', function() {
     location.reload();
 })
 
-
+/* start buying */
 checkout.addEventListener('click', buy);
 function buy() {
     header_modal_cart.style.display = 'block';
