@@ -219,7 +219,7 @@ body {
     padding: 2rem;
 }
 
-.img_product_1_cart {
+.cart_img {
     width: 15%;
     border-radius: 0.7rem;
     /*border: 2px solid green;*/
@@ -231,7 +231,7 @@ body {
     /*border: 2px solid green;*/
 }
 
-.img_product_1_cart, .cart_container_text {
+.cart_img, .cart_container_text {
     float: left;
     /*border: 2px solid green;*/
 }
@@ -477,8 +477,8 @@ body {
         'header_container header_container'
         'imgo_gallery main_container'
         'attribution attribution';
-    gap: 6rem;
-    padding: 0 11rem 0 11rem;
+    gap: 4rem;
+    margin: 0 5rem 0 5rem;
 }
    
 /* style 1st component - desktop */  
@@ -632,13 +632,125 @@ body {
 .checkout {
     font-size: 1.4rem;
 }
-
    
 /*style 2nd component - desktop */
+.imgo_gallery {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        'fullSize_image'
+        'thumbnail_images_container';
+    justify-items: center;
+    align-items: center;
+    justify-self: end;
+    margin: 0 2rem 0 0;
+    max-width: 50rem;
+    border: 1px solid green;
+}
 
+.prev {
+    display: none;
+}
+
+.next {
+    display: none;
+}
+
+.fullSize_image {
+    padding: 3rem;
+    /*justify-items: center;
+    align-items: center;*/
+    border: 2px solid green;
+}
+/*
+.img_product_1 {
+    justify-self: center;
+    align-self: center;
+    width: 50rem;
+}*/
+
+[class*='img_product_'] {
+    /*justify-self: center;
+    align-self: center;*/
+    width: 50rem;
+    border-radius: 1.2rem;
+}
+
+[class*='img_product_']:hover {
+    cursor: pointer;
+}
+
+.thumbnail_images_container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+        'thumbnail_image_1 thumbnail_image_2 thumbnail_image_3 thumbnail_image_4';
+    gap: 2.5rem;
+    padding: 0 3rem 0 3rem;
+    border: 1px solid green;
+}
+
+[class*='img_product_thumbnail_'] {
+    width: 50rem;
+}
+
+[class*='img_product_thumbnail_']:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
   
 /*style 3rd component - desktop */
+.main_container {
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-areas:
+        'company_name company_name'
+        'product_name_title product_name_title'
+        'product_description product_description'
+        'prices prices'
+        'quantity_container order_container';
+    justify-self: start;
+    max-width: 50rem;
+    border: 1px solid green;
+}
 
+.prices {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        'current_price discount'
+        'old_price old_price';
+    gap: 0;
+    justify-self: start;
+}
+
+.old_price {
+    justify-self: start;
+}
+
+.quantity_container {
+    padding: 1rem 0 1rem 0;
+    margin: 0 0 10rem 0;
+    /*border: 1px solid green;*/
+}
+
+.less_products:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.more_products:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.order_container {
+    padding: 1rem 0 1rem 0;
+    margin: 0 0 10rem 0;
+    /*border: 1px solid green;*/
+}
+
+.order_container:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
 
 /*style 4th component - desktop */
 /* 4th component styled in external stylesheet */
@@ -747,6 +859,22 @@ body {
     grid-area: fullSize_image;
 }
 
+.img_product_1 {
+    grid-area: img_product_1;
+}
+
+.img_product_2 {
+    grid-area: img_product_2;
+}
+
+.img_product_3 {
+    grid-area: img_product_3;
+}
+
+.img_product_4 {
+    grid-area: img_product_4;
+}
+
 /*
 .prev {
     grid-area: prev;
@@ -766,6 +894,38 @@ body {
 */
 .thumbnail_images_container {
     grid-area: thumbnail_images_container;
+}
+
+.thumbnail_image_1 {
+    grid-area: thumbnail_image_1;
+}
+
+.img_product_thumbnail_1 {
+    grid-area: img_product_thumbnail_1;
+}
+
+.thumbnail_image_2 {
+    grid-area: thumbnail_image_2;
+}
+
+.img_product_thumbnail_2 {
+    grid-area: img_product_thumbnail_2;
+}
+
+.thumbnail_image_3 {
+    grid-area: thumbnail_image_3;
+}
+
+.img_product_thumbnail_3 {
+    grid-area: img_product_thumbnail_3;
+}
+
+.thumbnail_image_4 {
+    grid-area: thumbnail_image_4;
+}
+
+.img_product_thumbnail_4 {
+    grid-area: img_product_thumbnail_4;
 }
 
 .main_container {
