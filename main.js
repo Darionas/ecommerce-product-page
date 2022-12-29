@@ -46,17 +46,31 @@ function plusSlides(n) {
 }
 
 /* Thumbnail image controls */
-
+function currentSlide(n) {
+    showSlides(slideIndex = n)
+}
 
 function showSlides(n) {
-    let i;
+    let i, j;
     let slides = document.getElementsByClassName('fullSize_image');
+    let thumb = document.getElementsByClassName('thumb');
+    let cont = document.getElementsByClassName('cont');
     if(n > slides.length) {slideIndex = 1}
     if(n < 1) {slideIndex = slides.length}
     for(i = 0; i < slides.length; i++) {
         slides[i].style.display = 'none';
     }
+    for (i = 0; i < thumb.length; i++) {
+        thumb[i].className = thumb[i].className.replace(' active', '');
+    }
+
+    for(j = 0; j < cont.length; j++) {
+        cont[j].className = cont[j].className.replace(' border_line', '');
+    }
+
     slides[slideIndex-1].style.display = 'block';
+    thumb[slideIndex-1].className += ' active';
+    cont[slideIndex-1].className += ' border_line';
 }
 
 
