@@ -1,0 +1,35 @@
+<!--modal element-->
+<div class="modal_imgo_gallery">
+    <img class="modal_close_icon" src="images/modal_icon-close.svg" alt="Close icon" />
+    <!--Full width images-->
+    <div class="modal_fullSize_image">
+        <img class="modal_img_product_1" src="images/image-product-1.jpg" alt="Product image 1" />
+    </div>
+    <div class="modal_fullSize_image">
+        <img class="modal_img_product_2" src="images/image-product-2.jpg" alt="Product image 2" />
+    </div>
+    <div class="modal_fullSize_image">
+        <img class="modal_img_product_3" src="images/image-product-3.jpg" alt="Product image 3" />
+    </div>
+    <div class="modal_fullSize_image">
+        <img class="modal_img_product_4" src="images/image-product-4.jpg" alt="Product image 4" />
+    </div>
+    <!--Next and previous buttons-->
+    <a class="modal_prev" onclick="modal_plusSlides(-1)"><img class="modal_arrow_prev" src="images/icon-previous.svg" alt="Previous icon" /></a>
+    <a class="modal_next" onclick="modal_plusSlides(1)"><img class="modal_arrow_next" src="images/icon-next.svg" alt="Next icon" /></a>
+    <!--Thumbnail images-->
+    <div class="modal_thumbnail_images_container">
+        <div class="modal_thumbnail_image_1 modal_cont">
+            <img class="modal_img_product_thumbnail_1 modal_thumb" src="images/image-product-1-thumbnail.jpg" alt="Product image 1" onclick="modal_currentSlide(1)"/>
+        </div>
+        <div class="modal_thumbnail_image_2 modal_cont">
+            <img class="modal_img_product_thumbnail_2 modal_thumb" src="images/image-product-2-thumbnail.jpg" alt="Product image 2" onclick="modal_currentSlide(2)"/>
+        </div>
+        <div class="modal_thumbnail_image_3 modal_cont">
+            <img class="modal_img_product_thumbnail_3 modal_thumb" src="images/image-product-3-thumbnail.jpg" alt="Product image 3" onclick="modal_currentSlide(3)"/>
+        </div>
+        <div class="modal_thumbnail_image_4 modal_cont">
+            <img class="modal_img_product_thumbnail_4 modal_thumb" src="images/image-product-4-thumbnail.jpg" alt="Product image 4" onclick="modal_currentSlide(4)"/>
+        </div>
+    </div>
+</div>

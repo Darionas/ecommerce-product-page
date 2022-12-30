@@ -10,6 +10,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
   <link rel="stylesheet" href="main.css" />
   <script defer src="main.js"></script>
+  <script src="modal.js"></script>
 </head>
 <body>
     <div class="grid_container">
@@ -29,6 +30,7 @@
                     </div>
                 </div>
             </nav>
+            <!--1st modal-->
             <div class="header_modal_cart">
                 <div class="modal_cart_container">Cart</div><hr/>
                 <div class="modal_cart_box clearfix">
@@ -43,6 +45,7 @@
                 <div class="empty_cart">Your cart is empty.</div>
                 <div class="follow">Follow purchase instructions</div>
             </div>
+            <!--2nd modal-->
             <div class="header_modal_nav">
                 <div class="header_navLinks">
                     <img class="close_icon" src="images/icon-close.svg" alt="Close icon" />
@@ -88,6 +91,8 @@
                 </div>
             </div>
         </div>
+        <!--3rd modal include-->
+        <div include-html="modal.html"></div>
         <!--3rd component-->
         <main class="main_container">
             <h2 class="company_name">SNEAKER COMPANY</h2>
@@ -115,5 +120,6 @@
             Coded by <a href="#">@Darionas</a>.
         </footer>
     </div>
+    <script>includeHTML();</script>
 </body>
 </html>

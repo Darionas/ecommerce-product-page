@@ -13,12 +13,16 @@ const checkout = document.getElementsByClassName('checkout')[0];
 const empty_cart = document.getElementsByClassName('empty_cart')[0];
 const bin = document.getElementsByClassName('bin')[0];
 const follow = document.getElementsByClassName('follow')[0];
+const modal_close_icon = document.getElementsByClassName('modal_close_icon')[0];
+let modal_imgo_gallery = document.getElementsByClassName('modal_imgo_gallery')[0];
 let operand = document.getElementsByClassName('operand')[0];
 let product_order = document.getElementsByClassName('product_order')[0];
 let product_quantity = document.getElementsByClassName('product_quantity')[0].ariaValueText;
 let total = document.getElementsByClassName('total')[0];
 let one_piece_price = document.getElementsByClassName('one_piece_price')[0].innerHTML;
+let fullSize_image = document.getElementsByClassName('fullSize_image')[0];
 let slideIndex = 1;
+let slideIndex_m = 1;
 
 
 /* Toggle hamburger icon */
@@ -55,11 +59,13 @@ function showSlides(n) {
     let slides = document.getElementsByClassName('fullSize_image');
     let thumb = document.getElementsByClassName('thumb');
     let cont = document.getElementsByClassName('cont');
+
     if(n > slides.length) {slideIndex = 1}
     if(n < 1) {slideIndex = slides.length}
     for(i = 0; i < slides.length; i++) {
         slides[i].style.display = 'none';
     }
+
     for (i = 0; i < thumb.length; i++) {
         thumb[i].className = thumb[i].className.replace(' active', '');
     }
@@ -74,7 +80,7 @@ function showSlides(n) {
 }
 
 
-/* Less & more toggle */
+/* minus & plus toggle */
 plus_icon.addEventListener('click', addition);
 let add = (function () {
     return function () {return product_quantity += 1;}
@@ -174,3 +180,54 @@ function buy() {
     empty_cart.style.display = 'none';
 
 }
+
+/* modal element */
+fullSize_image.addEventListener('click', function() {
+    modal_imgo_gallery.style.display = 'block';
+})
+
+/* Images gallery */
+/* FullSize image gallery */
+modal_showSlides(slideIndex_m);
+
+/* Next/previous controls */
+function modal_plusSlides(n) {
+    modal_showSlides(slideIndex_m += n);
+}
+
+/* Thumbnail image controls */
+function modal_currentSlide(n) {
+    modal_showSlides(slideIndex_m = n)
+}
+
+function modal_showSlides(n) {
+    let i, j;
+    let slides = document.getElementsByClassName('modal_fullSize_image');
+    let thumb = document.getElementsByClassName('modal_thumb');
+    let cont = document.getElementsByClassName('modal_cont');
+
+    if(n > slides.length) {slideIndex_m = 1}
+    if(n < 1) {slideIndex_m = slides.length}
+    for(i = 0; i < slides.length; i++) {
+        slides[i].style.display = 'none';
+    }
+
+    for (i = 0; i < thumb.length; i++) {
+        thumb[i].className = thumb[i].className.replace(' active_m', '');
+    }
+
+    for(j = 0; j < cont.length; j++) {
+        cont[j].className = cont[j].className.replace(' border_line_m', '');
+    }
+
+    slides[slideIndex_m-1].style.display = 'block';
+    thumb[slideIndex_m-1].className += ' active_m';
+    cont[slideIndex_m-1].className += ' border_line_m';
+   
+}
+
+
+/* close modal */
+modal_close_icon.addEventListener('click', function() {
+    alert('Hello');
+})

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
 @import url(reset.css);
 @import url(FM_part.css);
+@import url(modal.css);
 
 
 :root {
@@ -491,6 +492,8 @@ body {
         'attribution attribution';
     gap: 4rem;
     margin: 0 5rem 0 5rem;
+    position: relative;
+    /*border: 1px solid green;*/
 }
    
 /* style 1st component - desktop */  
