@@ -1,5 +1,6 @@
 'Use strict';
 
+const body = document.getElementsByTagName('body')[0];
 const modal_nav = document.getElementsByClassName('header_modal_nav')[0];
 const hamburger_icon = document.getElementsByClassName('hamburger_icon')[0];
 const close_icon = document.getElementsByClassName('close_icon')[0];
@@ -14,16 +15,20 @@ const empty_cart = document.getElementsByClassName('empty_cart')[0];
 const bin = document.getElementsByClassName('bin')[0];
 const follow = document.getElementsByClassName('follow')[0];
 const modal_close_icon = document.getElementsByClassName('modal_close_icon')[0];
+const modal_arrow_prev = document.getElementsByClassName('modal_arrow_prev')[0];
+const modal_arrow_prev_hover = document.getElementsByClassName('modal_arrow_prev_hover')[0];
+const modal_arrow_next = document.getElementsByClassName('modal_arrow_next')[0];
+const modal_arrow_next_hover = document.getElementsByClassName('modal_arrow_next_hover')[0];
+const modal_close_icon_hover = document.getElementsByClassName('modal_close_icon_hover')[0];
 let modal_imgo_gallery = document.getElementsByClassName('modal_imgo_gallery')[0];
 let operand = document.getElementsByClassName('operand')[0];
 let product_order = document.getElementsByClassName('product_order')[0];
 let product_quantity = document.getElementsByClassName('product_quantity')[0].ariaValueText;
 let total = document.getElementsByClassName('total')[0];
 let one_piece_price = document.getElementsByClassName('one_piece_price')[0].innerHTML;
-let fullSize_image = document.getElementsByClassName('fullSize_image')[0];
+let fullSize_image = document.getElementsByClassName('fullSize_image');
 let slideIndex = 1;
-let slideIndex_m = 1;
-
+let all_fullSize_images = '';
 
 /* Toggle hamburger icon */
 hamburger_icon.onclick = function() {
@@ -182,22 +187,29 @@ function buy() {
 }
 
 /* modal element */
-fullSize_image.addEventListener('click', function() {
-    modal_imgo_gallery.style.display = 'block';
-})
+for(let a = 0; a < fullSize_image.length; a++) {
+    all_fullSize_images = fullSize_image[a];
+    all_fullSize_images.addEventListener('click', function() {    
+        modal_imgo_gallery.style.display = 'block';
+        //grid_container.style.width = '100%';
+        body.style.backgroundColor = 'hsla(219, 9%, 45%)';
+        body.style.backgroundColor = 'hsla(219, 9%, 45%, 1)';
+    })
+}
+
 
 /* Images gallery */
 /* FullSize image gallery */
-modal_showSlides(slideIndex_m);
+modal_showSlides(slideIndex);
 
 /* Next/previous controls */
 function modal_plusSlides(n) {
-    modal_showSlides(slideIndex_m += n);
+    modal_showSlides(slideIndex += n);
 }
 
 /* Thumbnail image controls */
 function modal_currentSlide(n) {
-    modal_showSlides(slideIndex_m = n)
+    modal_showSlides(slideIndex = n)
 }
 
 function modal_showSlides(n) {
@@ -206,12 +218,12 @@ function modal_showSlides(n) {
     let thumb = document.getElementsByClassName('modal_thumb');
     let cont = document.getElementsByClassName('modal_cont');
 
-    if(n > slides.length) {slideIndex_m = 1}
-    if(n < 1) {slideIndex_m = slides.length}
+    if(n > slides.length) {slideIndex = 1}
+    if(n < 1) {slideIndex = slides.length}
     for(i = 0; i < slides.length; i++) {
         slides[i].style.display = 'none';
     }
-
+    
     for (i = 0; i < thumb.length; i++) {
         thumb[i].className = thumb[i].className.replace(' active_m', '');
     }
@@ -220,14 +232,51 @@ function modal_showSlides(n) {
         cont[j].className = cont[j].className.replace(' border_line_m', '');
     }
 
-    slides[slideIndex_m-1].style.display = 'block';
-    thumb[slideIndex_m-1].className += ' active_m';
-    cont[slideIndex_m-1].className += ' border_line_m';
+    slides[slideIndex-1].style.display = 'block';
+    thumb[slideIndex-1].className += ' active_m';
+    cont[slideIndex-1].className += ' border_line_m';
    
 }
 
 
 /* close modal */
 modal_close_icon.addEventListener('click', function() {
-    alert('Hello');
+    modal_imgo_gallery.style.display = 'none';
+    body.style.backgroundColor = 'hsl(0, 0%, 100%)';
 })
+
+/* hover close icon */
+modal_close_icon.addEventListener('mouseenter', function() {
+    modal_close_icon.style.display = 'none';
+    modal_close_icon_hover.style.display = 'block';
+})
+
+modal_close_icon_hover.addEventListener('mouseenter', function() {
+    modal_close_icon_hover.style.display = 'none';
+    modal_close_icon.style.display = 'block';
+})
+
+/* hover arrows */
+/* prev arrow */
+modal_arrow_prev.addEventListener('mouseenter', function() {
+    modal_arrow_prev.style.display = 'none';
+    modal_arrow_prev_hover.style.display = 'block';
+})
+
+modal_arrow_prev_hover.addEventListener('mouseleave', function() {
+    modal_arrow_prev_hover.style.display = 'none';
+    modal_arrow_prev.style.display = 'block';
+})
+
+/* next arrow */
+modal_arrow_next.addEventListener('mouseenter', function() {
+    modal_arrow_next.style.display = 'none';
+    modal_arrow_next_hover.style.display = 'block';
+})
+
+modal_arrow_next_hover.addEventListener('mouseleave', function() {
+    modal_arrow_next_hover.style.display = 'none';
+    modal_arrow_next.style.display = 'block';
+})
+
+

@@ -165,6 +165,7 @@ body {
     width: 65%;
 }
 
+/* 2nd modal */
 .header_modal_nav {
     display: none;
     position: fixed;
@@ -198,6 +199,7 @@ body {
     padding: 0 0 2.5rem 0;
 }
 
+/* 1st modal */
 .header_modal_cart {
     display: none;
     position: absolute;
@@ -514,7 +516,7 @@ body {
         'logo';
     align-items: center;
     width: 12rem;
-    margin: 0 0 0 -1.4rem;
+    margin: 0 0 0 -1rem;
     /*border: 2px solid green;*/
 }
 
@@ -560,6 +562,7 @@ body {
     /*border: 2px solid green;*/
 }
 
+/* lines under nav */
 .header_navLinks_collections {
     position: relative;
 } 
@@ -735,7 +738,7 @@ body {
     border: 2px solid var(--clr-orange);
     border-radius: 50%;
 }
-
+ /* 1st modal */
 .header_modal_cart {
     display: none;
     justify-self: end;
