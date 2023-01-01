@@ -20,6 +20,8 @@ const modal_arrow_prev_hover = document.getElementsByClassName('modal_arrow_prev
 const modal_arrow_next = document.getElementsByClassName('modal_arrow_next')[0];
 const modal_arrow_next_hover = document.getElementsByClassName('modal_arrow_next_hover')[0];
 const modal_close_icon_hover = document.getElementsByClassName('modal_close_icon_hover')[0];
+const max = window.matchMedia("(min-width: 768px)");
+const min = window.matchMedia("(max-width: 767px)");
 let modal_imgo_gallery = document.getElementsByClassName('modal_imgo_gallery')[0];
 let operand = document.getElementsByClassName('operand')[0];
 let product_order = document.getElementsByClassName('product_order')[0];
@@ -33,17 +35,17 @@ let all_fullSize_images = '';
 /* Toggle hamburger icon */
 hamburger_icon.onclick = function() {
     modal_nav.style.display = 'block';
-}
+};
 
 close_icon.onclick = function() {
     modal_nav.style.display = 'none';
-}
+};
 
 window.onclick = function(event) {
     if(event.target == modal_nav) {
         modal_nav.style.display = 'none';
     }
-}
+};
 
 /* Images gallery */
 /* FullSize image gallery */
@@ -56,7 +58,7 @@ function plusSlides(n) {
 
 /* Thumbnail image controls */
 function currentSlide(n) {
-    showSlides(slideIndex = n)
+    showSlides(slideIndex = n);
 }
 
 function showSlides(n) {
@@ -65,8 +67,8 @@ function showSlides(n) {
     let thumb = document.getElementsByClassName('thumb');
     let cont = document.getElementsByClassName('cont');
 
-    if(n > slides.length) {slideIndex = 1}
-    if(n < 1) {slideIndex = slides.length}
+    if(n > slides.length) {slideIndex = 1;}
+    if(n < 1) {slideIndex = slides.length;}
     for(i = 0; i < slides.length; i++) {
         slides[i].style.display = 'none';
     }
@@ -88,7 +90,7 @@ function showSlides(n) {
 /* minus & plus toggle */
 plus_icon.addEventListener('click', addition);
 let add = (function () {
-    return function () {return product_quantity += 1;}
+    return function () {return product_quantity += 1;};
 })();
 
 function addition() {
@@ -98,7 +100,7 @@ function addition() {
 
 minus_icon.addEventListener('click', subtraction);
 let subtract = (function () {
-        return function() {return product_quantity -= 1}
+        return function() {return product_quantity -= 1;};
 })();
 
 function subtraction() {
@@ -119,8 +121,8 @@ if(cart_icon_2) {
             } else {
                 product_order.style.display = 'none';
             }
-        };     
-    })
+        }     
+    });
 }
 
 /* Open cart container */
@@ -145,7 +147,7 @@ if(cart_icon_1) {
             empty_cart.style.display = 'block';
             
         }
-    })
+    });
 }
 
 /* close cart container */
@@ -153,7 +155,7 @@ document.addEventListener('mouseup', function(e) {
     if(!header_modal_cart.contains(e.target)) {
         header_modal_cart.style.display = 'none';
     }
-})
+});
 
 /* reset cart container */
 function reset() {
@@ -172,7 +174,7 @@ window.onload = function() {
 bin.addEventListener('click', function() {
     sessionStorage.setItem('reloading', 'true');
     location.reload();
-})
+});
 
 /* start buying */
 checkout.addEventListener('click', buy);
@@ -189,14 +191,19 @@ function buy() {
 /* modal element */
 for(let a = 0; a < fullSize_image.length; a++) {
     all_fullSize_images = fullSize_image[a];
-    all_fullSize_images.addEventListener('click', function() {    
-        modal_imgo_gallery.style.display = 'block';
-        //grid_container.style.width = '100%';
-        body.style.backgroundColor = 'hsla(219, 9%, 45%)';
-        body.style.backgroundColor = 'hsla(219, 9%, 45%, 1)';
-    })
+    all_fullSize_images.addEventListener('click', function() { 
+        let modal_imgo_gallery = document.getElementsByClassName('modal_imgo_gallery')[0];
+        if(max.matches == true) {   
+            modal_imgo_gallery.style.display = 'block';
+            body.style.backgroundColor = 'hsla(219, 9%, 45%)';
+            body.style.backgroundColor = 'hsla(219, 9%, 45%, 1)';
+        }
+        if(min.matches == true) {
+            modal_imgo_gallery.style.display = 'none';
+            body.style.backgroundColor = 'hsl(0, 0%, 100%)';
+        }
+    });
 }
-
 
 /* Images gallery */
 /* FullSize image gallery */
@@ -209,7 +216,7 @@ function modal_plusSlides(n) {
 
 /* Thumbnail image controls */
 function modal_currentSlide(n) {
-    modal_showSlides(slideIndex = n)
+    modal_showSlides(slideIndex = n);
 }
 
 function modal_showSlides(n) {
@@ -218,8 +225,8 @@ function modal_showSlides(n) {
     let thumb = document.getElementsByClassName('modal_thumb');
     let cont = document.getElementsByClassName('modal_cont');
 
-    if(n > slides.length) {slideIndex = 1}
-    if(n < 1) {slideIndex = slides.length}
+    if(n > slides.length) {slideIndex = 1;}
+    if(n < 1) {slideIndex = slides.length;}
     for(i = 0; i < slides.length; i++) {
         slides[i].style.display = 'none';
     }
@@ -238,45 +245,45 @@ function modal_showSlides(n) {
    
 }
 
-
 /* close modal */
-modal_close_icon.addEventListener('click', function() {
+modal_close_icon_hover.addEventListener('click', function() {
     modal_imgo_gallery.style.display = 'none';
     body.style.backgroundColor = 'hsl(0, 0%, 100%)';
-})
+});
 
 /* hover close icon */
 modal_close_icon.addEventListener('mouseenter', function() {
     modal_close_icon.style.display = 'none';
     modal_close_icon_hover.style.display = 'block';
-})
+});
 
-modal_close_icon_hover.addEventListener('mouseenter', function() {
+modal_close_icon_hover.addEventListener('mouseleave', function() {
     modal_close_icon_hover.style.display = 'none';
     modal_close_icon.style.display = 'block';
-})
+});
 
 /* hover arrows */
 /* prev arrow */
 modal_arrow_prev.addEventListener('mouseenter', function() {
     modal_arrow_prev.style.display = 'none';
     modal_arrow_prev_hover.style.display = 'block';
-})
+});
 
 modal_arrow_prev_hover.addEventListener('mouseleave', function() {
     modal_arrow_prev_hover.style.display = 'none';
     modal_arrow_prev.style.display = 'block';
-})
+});
 
 /* next arrow */
 modal_arrow_next.addEventListener('mouseenter', function() {
     modal_arrow_next.style.display = 'none';
     modal_arrow_next_hover.style.display = 'block';
-})
+});
 
 modal_arrow_next_hover.addEventListener('mouseleave', function() {
     modal_arrow_next_hover.style.display = 'none';
     modal_arrow_next.style.display = 'block';
-})
+});
 
 
+    

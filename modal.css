@@ -14,39 +14,37 @@
     background-color: hsla(219, 9%, 45%, 0.85);
 }
 
-.modal > * {
-    border: 2px solid green;
-}
-
 .modal {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas:
-        'modal_close_icon modal_close_icon'
-        'modal_close_icon_hover modal_close_icon_hover'
+        'modal_close_icon_container modal_close_icon_container'
         'modal_fullSize_image modal_fullSize_image'
         'modal_prev modal_next'
         'modal_thumbnail_images_container modal_thumbnail_images_container';
     gap: 1rem;
 }
 
+.modal_close_icon_container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        'modal_close_icon';
+    justify-self: center;
+    margin: 4rem 0 0 45rem;
+    position: relative;
+}
+
 .modal_close_icon {
     cursor: pointer;
-    justify-self: center;
-    align-self: end;
     width: 2.5rem;
-    margin: 5rem 0 0 47rem;
 }
 
 .modal_close_icon_hover {
     display: none;
     cursor: pointer;
-    justify-self: center;
-    align-self: end;
     width: 2.5rem;
-    margin: 5rem 0 0 76rem;
 }
-
 
 .modal_fullSize_image {
     justify-self: center;
@@ -58,9 +56,9 @@
    grid-template-columns: 1fr;
    grid-template-areas:
        'modal_arrow_prev';
-    margin: -28rem 21rem 28rem 0;
+    margin: -28rem 22.5rem 28rem 0;
     justify-self: end;
-    width: 14%;
+    width: 4rem;
 }
 
 .modal_arrow_prev {
@@ -85,9 +83,9 @@
    grid-template-columns: 1fr;
    grid-template-areas:
        'modal_arrow_next';
-    margin: -28rem 0 28rem 21rem;
+    margin: -28rem 0 28rem 22.5rem;
     justify-self: start;
-    width: 14%;
+    width: 4rem;
 }
 
 .modal_arrow_next {
@@ -108,7 +106,7 @@
 }
 
 .modal_thumbnail_images_container {
-    width: 37%;
+    width: 40rem;
     display: inline-flex;
     gap: 2rem;
     justify-items: center;
@@ -127,9 +125,16 @@
 }
 
 /*-----grid areas---------*/
+.modal_close_icon_container {
+    grid-area: modal_close_icon_container;
+}
 
 .modal_close_icon {
     grid-area: modal_close_icon;
+}
+
+.modal_close_icon_hover {
+    grid-area: modal_close_icon_hover;
 }
 
 .modal_fullSize_image {
@@ -144,12 +149,20 @@
     grid-area: modal_arrow_prev;
 }
 
+.modal_arrow_prev_hover {
+    grid-area: modal_arrow_prev_hover;
+}
+
 .modal_next {
     grid-area: modal_next;
 }
 
 .modal_arrow_next {
     grid-area: modal_arrow_next;
+}
+
+.modal_arrow_next_hover {
+    grid-area: modal_arrow_next_hover;
 }
 
 .modal_thumbnail_images_container {
