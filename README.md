@@ -31,22 +31,7 @@ Users should be able to:
 
 ### Screenshot
 
-<<<<<<< HEAD
 ![Ecommerce_product_page](./images/ecommerce_product_page.png)
-=======
-- [x] Create drawing from design (structure of design)(1st task)
-- [x] Create of repo (2nd task)
-- [x] Create HTML layout (not include modal elements) (3rd task)
-- [x] Create CSS layout according style guides (4th task)
-- [x] Create grid layout for mobile first (5th task)
-- [x] Craete grid layout for desktop (6th task)
-- [x] Implement JavaScript (7th task)
-- [x] Overview of solution and RWD (8th task)
-- [x] Tada it is done. Congratulation you reach your goal.🎉
->>>>>>> 314c9b21d8ac5df301b28855dbae3e794edad737
-
-
-<<<<<<< HEAD
 
 ### Links
 
@@ -102,6 +87,5 @@ But created with love.
 - Thank you Frontend Mentor team for opportunity to try, practice, train yourself in different level challenges and gain invaluable experience.
 - Thank you @Vikram from Frontend Mentor for guidance.
 - Thank you @Grace from Frontend Mentor for guidance.
-=======
-- [Frontend_Mentor](https://www.frontendmentor.io/license)
->>>>>>> 314c9b21d8ac5df301b28855dbae3e794edad737
+
+
