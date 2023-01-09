@@ -15,11 +15,6 @@ const empty_cart = document.getElementsByClassName('empty_cart')[0];
 const bin = document.getElementsByClassName('bin')[0];
 const follow = document.getElementsByClassName('follow')[0];
 const modal_close_icon = document.getElementsByClassName('modal_close_icon')[0];
-const modal_arrow_prev = document.getElementsByClassName('modal_arrow_prev')[0];
-const modal_arrow_prev_hover = document.getElementsByClassName('modal_arrow_prev_hover')[0];
-const modal_arrow_next = document.getElementsByClassName('modal_arrow_next')[0];
-const modal_arrow_next_hover = document.getElementsByClassName('modal_arrow_next_hover')[0];
-const modal_close_icon_hover = document.getElementsByClassName('modal_close_icon_hover')[0];
 const max = window.matchMedia("(min-width: 768px)");
 const min = window.matchMedia("(max-width: 767px)");
 let modal_imgo_gallery = document.getElementsByClassName('modal_imgo_gallery')[0];
@@ -32,6 +27,8 @@ let fullSize_image = document.getElementsByClassName('fullSize_image');
 let slideIndex = 1;
 let all_fullSize_images = '';
 
+/* classList toggle to show/hide element */
+/* https://stackoverflow.com/questions/54511902/how-to-use-classlist-toggle-to-show-hide-drop-down-list-content */
 /* Toggle hamburger icon */
 hamburger_icon.onclick = function() {
     modal_nav.style.display = 'block';
@@ -188,7 +185,7 @@ function buy() {
 
 }
 
-/* modal element */
+/* Open modal element */
 for(let a = 0; a < fullSize_image.length; a++) {
     all_fullSize_images = fullSize_image[a];
     all_fullSize_images.addEventListener('click', function() { 
@@ -246,44 +243,11 @@ function modal_showSlides(n) {
 }
 
 /* close modal */
-modal_close_icon_hover.addEventListener('click', function() {
+modal_close_icon.addEventListener('click', function() {
     modal_imgo_gallery.style.display = 'none';
     body.style.backgroundColor = 'hsl(0, 0%, 100%)';
 });
 
-/* hover close icon */
-modal_close_icon.addEventListener('mouseenter', function() {
-    modal_close_icon.style.display = 'none';
-    modal_close_icon_hover.style.display = 'block';
-});
-
-modal_close_icon_hover.addEventListener('mouseleave', function() {
-    modal_close_icon_hover.style.display = 'none';
-    modal_close_icon.style.display = 'block';
-});
-
-/* hover arrows */
-/* prev arrow */
-modal_arrow_prev.addEventListener('mouseenter', function() {
-    modal_arrow_prev.style.display = 'none';
-    modal_arrow_prev_hover.style.display = 'block';
-});
-
-modal_arrow_prev_hover.addEventListener('mouseleave', function() {
-    modal_arrow_prev_hover.style.display = 'none';
-    modal_arrow_prev.style.display = 'block';
-});
-
-/* next arrow */
-modal_arrow_next.addEventListener('mouseenter', function() {
-    modal_arrow_next.style.display = 'none';
-    modal_arrow_next_hover.style.display = 'block';
-});
-
-modal_arrow_next_hover.addEventListener('mouseleave', function() {
-    modal_arrow_next_hover.style.display = 'none';
-    modal_arrow_next.style.display = 'block';
-});
 
 
     

@@ -62,7 +62,7 @@ body {
         'imgo_gallery'
         'main_container'
         'attribution';
-    min-width: 37.5rem;
+    /*min-width: 37.5rem;*/
 }
 
 /* style 1st component - mobile */
@@ -70,7 +70,7 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas:
-        'header_nav'
+        'header_cont'
         'header_modal_cart';
     padding: 1rem;
     position: relative;
@@ -81,7 +81,7 @@ body {
     display: none;
 }
 
-.header_nav {
+.header_cont {
     display: grid;
     grid-template-columns: 0.2fr 1fr 1fr;
     grid-template-areas:
@@ -505,7 +505,7 @@ body {
     display: grid;
     grid-template-columns: 0.2fr 1.5fr 1fr;
     grid-template-areas:
-       'header_logo header_modal_nav header_nav';
+       'header_logo header_modal_nav header_cont';
     gap: 1.5rem;
     border-bottom: 1px solid var(--clr-grayish-blue);
     /*border: 2px solid green;*/
@@ -674,7 +674,7 @@ body {
     display: none;
 }
 
-.header_nav {
+.header_cont {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -898,6 +898,32 @@ body {
 
 /*style 4th component - desktop */
 /* 4th component styled in external stylesheet */
+
+/* 3rd modal style */
+/* change svg image fill property color */
+/* https://stackoverflow.com/questions/22252472/how-can-i-change-the-color-of-an-svg-element#answer-53336754 */
+.modal_close_icon:hover {
+    filter: invert(48%) sepia(72%) saturate(801%) hue-rotate(346deg) brightness(104%) contrast(102%);
+}
+
+.modal_arrow_prev {
+  padding: 1.3rem 1.3rem 1rem 1.3rem;
+}
+
+.modal_arrow_next {
+    padding: 1.3rem 1.3rem 1rem 1.3rem;
+  }
+
+/* Change svg image stroke property color */
+/* https://stackoverflow.com/questions/22289214/how-to-change-stroke-color-in-svg-image-on-hover-event */
+/* https://stackoverflow.com/questions/4502633/how-to-affect-other-elements-when-one-element-is-hovered */
+.modal_arrow_prev:hover #svg_img_prev {
+    stroke: #ff7d1a;
+}
+
+.modal_arrow_next:hover #svg_img_next {
+    stroke: #ff7d1a;
+}
     
 }
 /*------------------grid area names---------------------------*/
@@ -914,8 +940,8 @@ body {
     grid-area: logo;
 }
 
-.header_nav {
-    grid-area: header_nav;
+.header_cont {
+    grid-area: header_cont;
 }
 
 .hamburger_icon {

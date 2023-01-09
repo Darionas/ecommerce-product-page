@@ -16,7 +16,7 @@
         <!--1st component-->
         <header class="header_container">
             <a class="header_logo" href="#home"><img class="logo" src="images/logo.svg" alt="Logo icon" /></a> 
-            <nav class="header_nav">
+            <div class="header_cont">
                 <img class="hamburger_icon" src="images/icon-menu.svg" alt="Hamburger icon" />
                 <a class="header_logo_container" href="#home"><img class="logo_icon" src="images/logo.svg" alt="Logo icon" /></a>  
                 <div class="purchase">
@@ -28,7 +28,7 @@
                         <img class="purchase_logo" src="images/image-avatar.png" alt="Image avatar" />
                     </div>
                 </div>
-            </nav>
+            </div>
             <!--1st modal-->
             <div class="header_modal_cart">
                 <div class="modal_cart_container">Cart</div><hr/>
@@ -45,7 +45,7 @@
                 <div class="follow">Follow purchase instructions</div>
             </div>
             <!--2nd modal-->
-            <div class="header_modal_nav">
+            <nav class="header_modal_nav">
                 <div class="header_navLinks">
                     <img class="close_icon" src="images/icon-close.svg" alt="Close icon" />
                     <a class="header_navLinks_collections" href="#collections">Collections</a>
@@ -54,7 +54,7 @@
                     <a class="header_navLinks_about" href="#about">About</a>
                     <a class="header_navLinks_contact" href="#contact">Contact</a>
                 </div>
-            </div>
+            </nav>
         </header>
         <!--2nd component-->
         <div class="imgo_gallery">
@@ -95,7 +95,6 @@
             <div class="modal">
                 <div class="modal_close_icon_container">
                     <img class="modal_close_icon" src="images/modal-icon-close.svg" alt="Close icon" />
-                    <img class="modal_close_icon_hover" src="images/modal-icon-close-hover.svg" alt="Close icon" />
                 </div>
         <!--Full width images-->
                 <div class="modal_fullSize_image">
@@ -112,12 +111,10 @@
                 </div>
         <!--Next and previous buttons-->
                 <a class="modal_prev" onclick="modal_plusSlides(-1)">
-                    <img class="modal_arrow_prev" src="images/icon-previous.svg" alt="Previous icon" />
-                    <img class="modal_arrow_prev_hover" src="images/icon-previous-hover.svg" alt="Previous icon" />
+                    <span class="modal_arrow_prev"><svg width="12" height="18" xmlns="http://www.w3.org/2000/svg"><path id="svg_img_prev" d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg></span>
                 </a>
                 <a class="modal_next" onclick="modal_plusSlides(1)">
-                    <img class="modal_arrow_next" src="images/icon-next.svg" alt="Next icon" />
-                    <img class="modal_arrow_next_hover" src="images/icon-next-hover.svg" alt="Next icon" />
+                    <span class="modal_arrow_next"><svg width="12" height="18" xmlns="http://www.w3.org/2000/svg"><path id="svg_img_next" d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg></span>
                 </a>
         <!--Thumbnail images-->
                 <div class="modal_thumbnail_images_container">
