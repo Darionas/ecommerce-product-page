@@ -85,7 +85,7 @@ body {
     display: grid;
     grid-template-columns: 0.2fr 1fr 1fr;
     grid-template-areas:
-        'hamburger_icon header_logo_container purchase';
+        'header_nav header_logo_container purchase';
     gap: 0.5rem;
     justify-items: start;
     position: relative;
@@ -168,7 +168,7 @@ body {
 }
 
 /* 2nd modal */
-.header_modal_nav {
+.header_navLinks {
     display: none;
     position: fixed;
     z-index: 1;
@@ -366,6 +366,7 @@ body {
     font-size: 1.2rem;
     font-weight: var(--fw-700);
     color: var(--clr-orange);
+    text-transform: uppercase;
 }
 
 .product_name_title {
@@ -416,6 +417,10 @@ body {
     justify-self: end;
     align-self: center;
     /*border: 2px solid green;*/
+}
+
+.sr-only {
+    display: none;
 }
 
 .quantity_container {
@@ -505,7 +510,7 @@ body {
     display: grid;
     grid-template-columns: 0.2fr 1.5fr 1fr;
     grid-template-areas:
-       'header_logo header_modal_nav header_cont';
+       'header_logo header_navLinks header_cont';
     gap: 1.5rem;
     border-bottom: 1px solid var(--clr-grayish-blue);
     /*border: 2px solid green;*/
@@ -527,7 +532,7 @@ body {
     /*border: 2px solid green;*/
 }
 
-.header_modal_nav {
+.header_navLinks {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -984,8 +989,8 @@ body {
     grid-area: header_modal_cart;
 }
 
-.header_modal_nav {
-    grid-area: header_modal_nav;
+.header_navLinks {
+    grid-area: header_navLinks;
 }
 
 

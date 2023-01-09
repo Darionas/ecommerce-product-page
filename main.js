@@ -1,7 +1,7 @@
 'Use strict';
 
 const body = document.getElementsByTagName('body')[0];
-const modal_nav = document.getElementsByClassName('header_modal_nav')[0];
+const modal_nav = document.getElementsByClassName('header_navLinks')[0];
 const hamburger_icon = document.getElementsByClassName('hamburger_icon')[0];
 const close_icon = document.getElementsByClassName('close_icon')[0];
 const header_modal_cart = document.getElementsByClassName('header_modal_cart')[0];

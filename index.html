@@ -15,9 +15,22 @@
     <div class="grid_container">
         <!--1st component-->
         <header class="header_container">
-            <a class="header_logo" href="#home"><img class="logo" src="images/logo.svg" alt="Logo icon" /></a> 
+            <a class="header_logo" href="#home" aria-label="Home fall limited edition sneakers" ><img class="logo" src="images/logo.svg" alt="Fall limited edition sneakers" /></a> 
             <div class="header_cont">
-                <img class="hamburger_icon" src="images/icon-menu.svg" alt="Hamburger icon" />
+                <!--2nd modal-->
+                <nav class="header_nav">
+                    <button class="hamburger_menu" aria-label="menu" aria-expanded="false">
+                        <img class="hamburger_icon" src="images/icon-menu.svg" alt="Hamburger icon" />
+                        <img class="close_icon" src="images/icon-close.svg" alt="Close icon" />
+                    </button>
+                    <ul class="header_navLinks">
+                        <li><a class="header_navLinks_collections" href="#collections">Collections</a></li>
+                        <li><a class="header_navLinks_men" href="#men">Men</a></li>
+                        <li><a class="header_navLinks_women" href="#women">Women</a></li>
+                        <li><a class="header_navLinks_about" href="#about">About</a></li>
+                        <li><a class="header_navLinks_contact" href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
                 <a class="header_logo_container" href="#home"><img class="logo_icon" src="images/logo.svg" alt="Logo icon" /></a>  
                 <div class="purchase">
                     <div class="cart_container">
@@ -44,17 +57,6 @@
                 <div class="empty_cart">Your cart is empty.</div>
                 <div class="follow">Follow purchase instructions</div>
             </div>
-            <!--2nd modal-->
-            <nav class="header_modal_nav">
-                <div class="header_navLinks">
-                    <img class="close_icon" src="images/icon-close.svg" alt="Close icon" />
-                    <a class="header_navLinks_collections" href="#collections">Collections</a>
-                    <a class="header_navLinks_men" href="#men">Men</a>
-                    <a class="header_navLinks_women" href="#women">Women</a>
-                    <a class="header_navLinks_about" href="#about">About</a>
-                    <a class="header_navLinks_contact" href="#contact">Contact</a>
-                </div>
-            </nav>
         </header>
         <!--2nd component-->
         <div class="imgo_gallery">
@@ -135,15 +137,15 @@
         </div>
         <!--3rd component-->
         <main class="main_container">
-            <h2 class="company_name">SNEAKER COMPANY</h2>
-            <h1 class="product_name_title">Fall Limited Edition Sneakers</h1>
+            <h1 class="company_name">Sneaker company</h1>
+            <h2 class="product_name_title">Fall Limited Edition Sneakers</h2>
             <div class="product_description">These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole,
                 they'll withstand everything the weather can offer.
             </div>
             <div class="prices">
                 <div class="current_price"><span class="dollar_icon_1">$</span>125.00</div>
                 <div class="discount"><span class="percentage">50</span><span class="percentage_icon">%</span></div>
-                <del class="old_price"><span class="dollar_icon_2">$</span>250.00</del>
+                <del class="old_price"><span class="sr-only">old price</span><span class="dollar_icon_2">$</span>250.00</del>
             </div>
             <div class="quantity_container">
                 <div class="less_products"><img class="minus_icon" src="images/icon-minus.svg" alt="Minus icon" /></div>
