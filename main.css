@@ -63,6 +63,7 @@ body {
         'main_container'
         'attribution';
     /*min-width: 37.5rem;*/
+    position: relative;
 }
 
 /* style 1st component - mobile */
@@ -73,30 +74,107 @@ body {
         'header_cont'
         'header_modal_cart';
     padding: 1rem;
-    position: relative;
+    /*position: relative;*/
     /*border: 2px solid green;*/
 }
 
+/*
 .header_logo {
     display: none;
-}
+}*/
 
 .header_cont {
     display: grid;
-    grid-template-columns: 0.2fr 1fr 1fr;
+    grid-template-columns: min-content 1fr 1fr;
     grid-template-areas:
         'header_nav header_logo_container purchase';
     gap: 0.5rem;
     justify-items: start;
-    position: relative;
+    /*position: relative;*/
+    /*border: 2px solid red;*/
+}
+
+/*-----navigation mobile-------*/
+/* https://xane514.medium.com/aria-controls-for-creating-a-mobile-navbar-6001012153a0 */
+
+.header_nav {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        'hamburger_menu';
     /*border: 2px solid green;*/
 }
 
-.hamburger_icon {
-    align-self: center;
-    margin: 0 0 0 1rem;
+[aria-expanded="false"] .close_icon {
+    display: none;
+  }
+  
+  [aria-expanded="true"] .hamburger_icon {
+    display: none;
+  }
+  
+  [aria-expanded="true"] .close_icon {
+    display: block;
+  }
+  
+  [aria-expanded="false"] .hamburger_icon {
+    display: block;
+  }
+
+  [aria-expanded="false"] ~ .header_navLinks, .show_nav {
+    display: none;
+  }
+
+  [aria-expanded="true"] ~ .header_navLinks, .show_nav {
+    display: block;
+  }
+
+  .hamburger_menu img {
+    width: 100%;
+  }
+
+.hamburger_menu {
+    background-color: transparent;
+    border: none;
+    padding: 1rem;
+    z-index: 2;
+    min-width: 4.4rem;
+    place-content: center;
     /*border: 2px solid green;*/
 }
+
+.show_nav {
+    list-style-type: none;
+    /*overflow: hidden;*/
+    line-height: 3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 70%;
+    z-index: 1;
+    padding: 10rem 0 0 0;
+    background-color: var(--clr-white);
+    /*border: 2px solid yellow;*/
+}
+
+.header_navLinks {
+    background-color: var(--clr-white);
+}
+
+[class*='header_navLinks_'] {
+    font-family: var(--ff-secondary);
+    font-size: 2rem;
+    font-weight: var(--fw-700);
+    line-height: 1;
+    color: var(--clr-primary-bgr);
+    padding: 1rem;
+    text-decoration: none;
+    text-transform: capitalize;
+    margin-left: 2rem;
+}
+
+/*---end of navigation mobile-----*/
 
 .header_logo_container {
     display: grid;
@@ -104,11 +182,12 @@ body {
     grid-template-areas:
         'logo_icon';
     align-self: center;
-    margin: 0 0 0 1rem;
+    /*margin: 0 0 0 1rem;*/
     /*border: 2px solid green;*/
 }
 
 .logo_icon {
+    padding: 0.5rem;
     width: 100%;
 }
 
@@ -149,7 +228,7 @@ body {
 }
 
 .cart_icon_1 {
-    width: 65%;
+    width: 55%;
     margin-inline: auto;
     /*border: 2px solid green;*/
 }
@@ -160,14 +239,14 @@ body {
     grid-template-areas:
         'purchase_logo';
     justify-items: center;
+    align-items: center;
     /*border: 1px solid green;*/
 }
 
 .purchase_logo {
     width: 65%;
 }
-
-/* 2nd modal */
+/*
 .header_navLinks {
     display: none;
     position: fixed;
@@ -189,9 +268,6 @@ body {
     margin: 0 0 20rem 0;
 }
 
-.close_icon {
-    padding: 0 0 10vw 0;
-}
 
 [class*='header_navLinks_'] {
     font-weight: var(--fw-700);
@@ -199,7 +275,7 @@ body {
     text-decoration: none;
     display: block;
     padding: 0 0 2.5rem 0;
-}
+}*/
 
 /* 1st modal */
 .header_modal_cart {
@@ -488,10 +564,10 @@ body {
 
 /*---------------------Desktop layout-------------------------*/
 @media screen and (min-width: 48rem) {
-/*
+
     * {
         display: none;
-    } */
+    } 
 
 .grid_container {
     grid-template-columns: 1fr 1fr;
@@ -510,12 +586,13 @@ body {
     display: grid;
     grid-template-columns: 0.2fr 1.5fr 1fr;
     grid-template-areas:
-       'header_logo header_navLinks header_cont';
+       'header_logo_container header_navLinks header_cont';
     gap: 1.5rem;
     border-bottom: 1px solid var(--clr-grayish-blue);
     /*border: 2px solid green;*/
 }
 
+/*
 .header_logo {
     display: grid;
     grid-template-columns: 1fr;
@@ -523,14 +600,16 @@ body {
         'logo';
     align-items: center;
     width: 12rem;
-    margin: 0 0 0 -1rem;
+    margin: 0 0 0 -1rem;*/
     /*border: 2px solid green;*/
+/*
 }
 
 .logo {
-    width: 100%;
+    width: 100%; */
     /*border: 2px solid green;*/
-}
+/*    
+}*/
 
 .header_navLinks {
     display: grid;
@@ -693,10 +772,10 @@ body {
 .hamburger_icon {
     display: none;
 }
-
+/*
 .header_logo_container {
     display: none;
-}
+}*/
 
 .purchase {
     justify-items: end;
@@ -904,7 +983,7 @@ body {
 /*style 4th component - desktop */
 /* 4th component styled in external stylesheet */
 
-/* 3rd modal style */
+/* 2nd modal style */
 /* change svg image fill property color */
 /* https://stackoverflow.com/questions/22252472/how-can-i-change-the-color-of-an-svg-element#answer-53336754 */
 .modal_close_icon:hover {
@@ -937,20 +1016,25 @@ body {
     grid-area: header_container;
 }
 
+/*
 .header_logo {
     grid-area: header_logo;
 }
 
 .logo {
     grid-area: logo;
-}
+}*/
 
 .header_cont {
     grid-area: header_cont;
 }
 
-.hamburger_icon {
-    grid-area: hamburger_icon;
+.header_nav {
+    grid-area: header_nav;
+}
+
+.hamburger_menu {
+    grid-area: hamburger_menu;
 }
 
 .header_logo_container {
@@ -989,10 +1073,10 @@ body {
     grid-area: header_modal_cart;
 }
 
+/*
 .header_navLinks {
     grid-area: header_navLinks;
-}
-
+}*/
 
 .header_navLinks {
     grid-area: header_navLinks;

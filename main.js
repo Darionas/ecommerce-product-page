@@ -2,7 +2,9 @@
 
 const body = document.getElementsByTagName('body')[0];
 const modal_nav = document.getElementsByClassName('header_navLinks')[0];
-const hamburger_icon = document.getElementsByClassName('hamburger_icon')[0];
+
+const hamburger_menu = document.querySelector('.hamburger_menu');
+
 const close_icon = document.getElementsByClassName('close_icon')[0];
 const header_modal_cart = document.getElementsByClassName('header_modal_cart')[0];
 const cart_icon_1 = document.getElementsByClassName('cart_icon_1')[0];
@@ -27,22 +29,14 @@ let fullSize_image = document.getElementsByClassName('fullSize_image');
 let slideIndex = 1;
 let all_fullSize_images = '';
 
-/* classList toggle to show/hide element */
-/* https://stackoverflow.com/questions/54511902/how-to-use-classlist-toggle-to-show-hide-drop-down-list-content */
-/* Toggle hamburger icon */
-hamburger_icon.onclick = function() {
-    modal_nav.style.display = 'block';
-};
-
-close_icon.onclick = function() {
-    modal_nav.style.display = 'none';
-};
-
-window.onclick = function(event) {
-    if(event.target == modal_nav) {
-        modal_nav.style.display = 'none';
-    }
-};
+/* navigation */
+/* https://xane514.medium.com/aria-controls-for-creating-a-mobile-navbar-6001012153a0 */
+/*const hamburger_menu = document.querySelector('.hamburger_menu');*/
+hamburger_menu.addEventListener('click', function() {
+   let isExpanded = hamburger_menu.getAttribute('aria-expanded');
+   isExpanded === 'true' ? isExpanded = 'false' : isExpanded = 'true';
+   hamburger_menu.setAttribute('aria-expanded', isExpanded);
+})
 
 /* Images gallery */
 /* FullSize image gallery */
@@ -202,7 +196,7 @@ for(let a = 0; a < fullSize_image.length; a++) {
     });
 }
 
-/* Images gallery */
+/* Modal images gallery */
 /* FullSize image gallery */
 modal_showSlides(slideIndex);
 

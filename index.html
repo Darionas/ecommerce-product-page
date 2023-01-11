@@ -9,21 +9,21 @@
   <meta name="author" content="Darius" />
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
   <link rel="stylesheet" href="main.css" />
-  <script defer src="main.js"></script>
+<script defer src="main.js"></script>
 </head>
 <body>
     <div class="grid_container">
         <!--1st component-->
         <header class="header_container">
-            <a class="header_logo" href="#home" aria-label="Home fall limited edition sneakers" ><img class="logo" src="images/logo.svg" alt="Fall limited edition sneakers" /></a> 
+            <!--<a class="header_logo" href="#home" aria-label="Home fall limited edition sneakers" ><img class="logo" src="images/logo.svg" alt="Fall limited edition sneakers" /></a>--> 
             <div class="header_cont">
-                <!--2nd modal-->
+                <!--navigation-->
                 <nav class="header_nav">
                     <button class="hamburger_menu" aria-label="menu" aria-expanded="false">
-                        <img class="hamburger_icon" src="images/icon-menu.svg" alt="Hamburger icon" />
-                        <img class="close_icon" src="images/icon-close.svg" alt="Close icon" />
+                        <img class="hamburger_icon" src="images/icon-menu.svg" alt="" />
+                        <img class="close_icon" src="images/icon-close.svg" alt="" />
                     </button>
-                    <ul class="header_navLinks">
+                    <ul class="header_navLinks show_nav">
                         <li><a class="header_navLinks_collections" href="#collections">Collections</a></li>
                         <li><a class="header_navLinks_men" href="#men">Men</a></li>
                         <li><a class="header_navLinks_women" href="#women">Women</a></li>
@@ -31,14 +31,14 @@
                         <li><a class="header_navLinks_contact" href="#contact">Contact</a></li>
                     </ul>
                 </nav>
-                <a class="header_logo_container" href="#home"><img class="logo_icon" src="images/logo.svg" alt="Logo icon" /></a>  
+                <a class="header_logo_container" href="#home" aria-label="Home fall limited edition sneakers"><img class="logo_icon" src="images/logo.svg" alt="Fall limited edition sneakers" /></a>  
                 <div class="purchase">
                     <div class="cart_container">
                         <div class="product_order"></div>
-                        <img class="cart_icon_1" src="images/icon-cart.svg" alt="Cart icon" />
+                        <img class="cart_icon_1" src="images/icon-cart.svg" alt="Cart" />
                     </div>
                     <div class="purchase_logo_container">
-                        <img class="purchase_logo" src="images/image-avatar.png" alt="Image avatar" />
+                        <img class="purchase_logo" src="images/image-avatar.png" alt="Avatar" />
                     </div>
                 </div>
             </div>
@@ -46,12 +46,12 @@
             <div class="header_modal_cart">
                 <div class="modal_cart_container">Cart</div><hr/>
                 <div class="modal_cart_box clearfix">
-                    <img class="cart_img" src="images/image-product-1-thumbnail.jpg" alt="Product image 1"/>
+                    <img class="cart_img" src="images/image-product-1-thumbnail.jpg" alt="Sneakers 1"/>
                 <div class="cart_container_text">
                     <p class="cart_title">Fall Limited Edition Sneakers</p>
                     <p class="cart_price"><span class="dollar_icon_3">$</span><span class="one_piece_price">125.00</span><span class="multip"> x </span><span class="operand"></span><span class="dollar_icon_4"> $</span><span class="total"></span></p>  
                 </div>
-                    <img class="bin" src="images/icon-delete.svg" alt="Delete icon" />
+                    <img class="bin" src="images/icon-delete.svg" alt="Delete bin" />
                 </div>
                 <div class="checkout">Checkout</div>
                 <div class="empty_cart">Your cart is empty.</div>
@@ -62,54 +62,54 @@
         <div class="imgo_gallery">
             <!--Full width images-->
             <div class="fullSize_image">
-                <img class="img_product_1" src="images/image-product-1.jpg" alt="Product image 1" />
+                <img class="img_product_1" src="images/image-product-1.jpg" alt="Sneakers 1" />
             </div>
             <div class="fullSize_image">
-                <img class="img_product_2" src="images/image-product-2.jpg" alt="Product image 2" />
+                <img class="img_product_2" src="images/image-product-2.jpg" alt="Sneakers 2" />
             </div>
             <div class="fullSize_image">
-                <img class="img_product_3" src="images/image-product-3.jpg" alt="Product image 3" />
+                <img class="img_product_3" src="images/image-product-3.jpg" alt="Sneakers 3" />
             </div>
             <div class="fullSize_image">
-                <img class="img_product_4" src="images/image-product-4.jpg" alt="Product image 4" />
+                <img class="img_product_4" src="images/image-product-4.jpg" alt="Sneakers 4" />
             </div>
             <!--Next and previous buttons-->
-            <a class="prev" onclick="plusSlides(-1)"><img class="arrow_prev" src="images/icon-previous.svg" alt="Previous icon" /></a>
-            <a class="next" onclick="plusSlides(1)"><img class="arrow_next" src="images/icon-next.svg" alt="Next icon" /></a>
+            <a class="prev" onclick="plusSlides(-1)"><img class="arrow_prev" src="images/icon-previous.svg" alt="Previous" /></a>
+            <a class="next" onclick="plusSlides(1)"><img class="arrow_next" src="images/icon-next.svg" alt="Next" /></a>
             <!--Thumbnail images-->
             <div class="thumbnail_images_container">
                 <div class="thumbnail_image_1 cont">
-                    <img class="img_product_thumbnail_1 thumb" src="images/image-product-1-thumbnail.jpg" alt="Product image 1" onclick="currentSlide(1)"/>
+                    <img class="img_product_thumbnail_1 thumb" src="images/image-product-1-thumbnail.jpg" alt="Sneakers 1" onclick="currentSlide(1)"/>
                 </div>
                 <div class="thumbnail_image_2 cont">
-                    <img class="img_product_thumbnail_2 thumb" src="images/image-product-2-thumbnail.jpg" alt="Product image 2" onclick="currentSlide(2)"/>
+                    <img class="img_product_thumbnail_2 thumb" src="images/image-product-2-thumbnail.jpg" alt="Sneakers 2" onclick="currentSlide(2)"/>
                 </div>
                 <div class="thumbnail_image_3 cont">
-                    <img class="img_product_thumbnail_3 thumb" src="images/image-product-3-thumbnail.jpg" alt="Product image 3" onclick="currentSlide(3)"/>
+                    <img class="img_product_thumbnail_3 thumb" src="images/image-product-3-thumbnail.jpg" alt="Sneakers 3" onclick="currentSlide(3)"/>
                 </div>
                 <div class="thumbnail_image_4 cont">
-                    <img class="img_product_thumbnail_4 thumb" src="images/image-product-4-thumbnail.jpg" alt="Product image 4" onclick="currentSlide(4)"/>
+                    <img class="img_product_thumbnail_4 thumb" src="images/image-product-4-thumbnail.jpg" alt="Sneakers 4" onclick="currentSlide(4)"/>
                 </div>
             </div>
         </div>
-        <!--3rd modal element-->
+        <!--2nd modal element-->
         <div class="modal_imgo_gallery">
             <div class="modal">
                 <div class="modal_close_icon_container">
-                    <img class="modal_close_icon" src="images/modal-icon-close.svg" alt="Close icon" />
+                    <img class="modal_close_icon" src="images/modal-icon-close.svg" alt="Close" />
                 </div>
         <!--Full width images-->
                 <div class="modal_fullSize_image">
-                    <img class="modal_img_product_1" src="images/image-product-1.jpg" alt="Product image 1" />
+                    <img class="modal_img_product_1" src="images/image-product-1.jpg" alt="Sneakers 1" />
                 </div>
                 <div class="modal_fullSize_image">
-                    <img class="modal_img_product_2" src="images/image-product-2.jpg" alt="Product image 2" />
+                    <img class="modal_img_product_2" src="images/image-product-2.jpg" alt="Sneakers 2" />
                 </div>
                 <div class="modal_fullSize_image">
-                    <img class="modal_img_product_3" src="images/image-product-3.jpg" alt="Product image 3" />
+                    <img class="modal_img_product_3" src="images/image-product-3.jpg" alt="Sneakers 3" />
                 </div>
                 <div class="modal_fullSize_image">
-                    <img class="modal_img_product_4" src="images/image-product-4.jpg" alt="Product image 4" />
+                    <img class="modal_img_product_4" src="images/image-product-4.jpg" alt="Sneakers 4" />
                 </div>
         <!--Next and previous buttons-->
                 <a class="modal_prev" onclick="modal_plusSlides(-1)">
@@ -121,16 +121,16 @@
         <!--Thumbnail images-->
                 <div class="modal_thumbnail_images_container">
                     <div class="modal_thumbnail_image_1 modal_cont">
-                        <img class="modal_img_product_thumbnail_1 modal_thumb" src="images/image-product-1-thumbnail.jpg" alt="Product image 1" onclick="modal_currentSlide(1)"/>
+                        <img class="modal_img_product_thumbnail_1 modal_thumb" src="images/image-product-1-thumbnail.jpg" alt="Sneakers 1" onclick="modal_currentSlide(1)"/>
                     </div>
                     <div class="modal_thumbnail_image_2 modal_cont">
-                        <img class="modal_img_product_thumbnail_2 modal_thumb" src="images/image-product-2-thumbnail.jpg" alt="Product image 2" onclick="modal_currentSlide(2)"/>
+                        <img class="modal_img_product_thumbnail_2 modal_thumb" src="images/image-product-2-thumbnail.jpg" alt="Sneakers 2" onclick="modal_currentSlide(2)"/>
                     </div>
                     <div class="modal_thumbnail_image_3 modal_cont">
-                        <img class="modal_img_product_thumbnail_3 modal_thumb" src="images/image-product-3-thumbnail.jpg" alt="Product image 3" onclick="modal_currentSlide(3)"/>
+                        <img class="modal_img_product_thumbnail_3 modal_thumb" src="images/image-product-3-thumbnail.jpg" alt="Sneakers 3" onclick="modal_currentSlide(3)"/>
                     </div>
                     <div class="modal_thumbnail_image_4 modal_cont">
-                        <img class="modal_img_product_thumbnail_4 modal_thumb" src="images/image-product-4-thumbnail.jpg" alt="Product image 4" onclick="modal_currentSlide(4)"/>
+                        <img class="modal_img_product_thumbnail_4 modal_thumb" src="images/image-product-4-thumbnail.jpg" alt="Sneakers 4" onclick="modal_currentSlide(4)"/>
                     </div>
                 </div>
             </div>
@@ -148,12 +148,12 @@
                 <del class="old_price"><span class="sr-only">old price</span><span class="dollar_icon_2">$</span>250.00</del>
             </div>
             <div class="quantity_container">
-                <div class="less_products"><img class="minus_icon" src="images/icon-minus.svg" alt="Minus icon" /></div>
+                <div class="less_products"><img class="minus_icon" src="images/icon-minus.svg" alt="Minus" /></div>
                 <div class="product_quantity">0</div>
-                <div class="more_products"><img class="plus_icon" src="images/icon-plus.svg" alt="Plus icon" /></div>
+                <div class="more_products"><img class="plus_icon" src="images/icon-plus.svg" alt="Plus" /></div>
             </div>
             <div class="order_container">
-                <div class="order"><img class="cart_icon_2" src="images/icon-cart-color.svg" alt="Cart icon" /><span class="text"> Add to cart</span></div>
+                <div class="order"><img class="cart_icon_2" src="images/icon-cart-color.svg" alt="Cart" /><span class="text"> Add to cart</span></div>
             </div>
         </main>
        <!--4th component-->
