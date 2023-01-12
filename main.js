@@ -4,6 +4,7 @@ const body = document.getElementsByTagName('body')[0];
 const modal_nav = document.getElementsByClassName('header_navLinks')[0];
 
 const hamburger_menu = document.querySelector('.hamburger_menu');
+const overlay = document.querySelector('#overlay');
 
 const close_icon = document.getElementsByClassName('close_icon')[0];
 const header_modal_cart = document.getElementsByClassName('header_modal_cart')[0];
@@ -36,6 +37,13 @@ hamburger_menu.addEventListener('click', function() {
    let isExpanded = hamburger_menu.getAttribute('aria-expanded');
    isExpanded === 'true' ? isExpanded = 'false' : isExpanded = 'true';
    hamburger_menu.setAttribute('aria-expanded', isExpanded);
+   if(isExpanded == 'true') {
+        overlay.style.display = 'block'; 
+   }
+
+   if(isExpanded == 'false') {
+        overlay.style.display = 'none'; 
+   }
 })
 
 /* Images gallery */
