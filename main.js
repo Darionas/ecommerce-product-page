@@ -14,6 +14,8 @@ const follow = document.getElementsByClassName('follow')[0];
 const modal_close_icon = document.getElementsByClassName('modal_close_icon')[0];
 const max = window.matchMedia("(min-width: 768px)");
 const min = window.matchMedia("(max-width: 767px)");
+const cart_icon_1 = document.getElementsByClassName('cart_icon_1')[0];
+const cart_icon_2 = document.getElementsByClassName('order_container')[0];
 let modal_imgo_gallery = document.getElementsByClassName('modal_imgo_gallery')[0];
 let operand = document.getElementsByClassName('operand')[0];
 let product_order = document.getElementsByClassName('product_order')[0];
@@ -119,7 +121,6 @@ if(cart_icon_2) {
 
 /* Open cart container */
 if(cart_icon_1) {
-    let flag = 'false';
     cart_icon_1.addEventListener('click', function() {
         header_modal_cart.style.display = 'block';
         if(product_quantity == 0) {
