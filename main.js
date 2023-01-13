@@ -1,15 +1,9 @@
 'Use strict';
 
 const body = document.getElementsByTagName('body')[0];
-const modal_nav = document.getElementsByClassName('header_navLinks')[0];
-
 const hamburger_menu = document.querySelector('.hamburger_menu');
 const overlay = document.querySelector('#overlay');
-
-const close_icon = document.getElementsByClassName('close_icon')[0];
-const header_modal_cart = document.getElementsByClassName('header_modal_cart')[0];
-const cart_icon_1 = document.getElementsByClassName('cart_icon_1')[0];
-const cart_icon_2 = document.getElementsByClassName('order_container')[0];
+const header_modal_cart = document.querySelector('.header_modal_cart');
 const minus_icon = document.getElementsByClassName('minus_icon')[0];
 const plus_icon = document.getElementsByClassName('plus_icon')[0];
 const modal_cart_box = document.getElementsByClassName('modal_cart_box')[0];
@@ -32,7 +26,6 @@ let all_fullSize_images = '';
 
 /* navigation */
 /* https://xane514.medium.com/aria-controls-for-creating-a-mobile-navbar-6001012153a0 */
-/*const hamburger_menu = document.querySelector('.hamburger_menu');*/
 hamburger_menu.addEventListener('click', function() {
    let isExpanded = hamburger_menu.getAttribute('aria-expanded');
    isExpanded === 'true' ? isExpanded = 'false' : isExpanded = 'true';
@@ -46,7 +39,7 @@ hamburger_menu.addEventListener('click', function() {
    }
 })
 
-/* Images gallery */
+/* Desktop images gallery */
 /* FullSize image gallery */
 showSlides(slideIndex);
 
@@ -126,6 +119,7 @@ if(cart_icon_2) {
 
 /* Open cart container */
 if(cart_icon_1) {
+    let flag = 'false';
     cart_icon_1.addEventListener('click', function() {
         header_modal_cart.style.display = 'block';
         if(product_quantity == 0) {
@@ -144,7 +138,6 @@ if(cart_icon_1) {
             modal_cart_box.style.display = 'none';
             checkout.style.display = 'none';
             empty_cart.style.display = 'block';
-            
         }
     });
 }
